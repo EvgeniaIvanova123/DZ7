@@ -42,23 +42,23 @@ public class MonthService {
 
     public int minAvgSales(long[] sales) {
         long avg = avgSales(sales);
-        int minAvgMonth = 0;
+        long minAvgMonth = 0;
         for (int i = 0; i < sales.length; i++) {
             if (sales[i] < avg) {
                 minAvgMonth++;
             }
         }
-        return minAvgMonth;
+        return (int) minAvgMonth;
     }
 
     public int maxAvgSales(long[] sales) {
         long avg = avgSales(sales);
-        int maxAvgMonth = 0;
+        long maxAvgMonth = 0;
         for (int i = 0; i < sales.length; i++) {
             if (sales[i] > avg) {
                 maxAvgMonth++;
             }
         }
-        return maxAvgMonth;
+        return (int) maxAvgMonth;
     }
 }
