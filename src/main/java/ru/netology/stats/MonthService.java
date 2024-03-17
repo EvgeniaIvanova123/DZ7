@@ -1,7 +1,7 @@
 package ru.netology.stats;
 
 public class MonthService {
-    public int minSales(long[] sales) {
+    public long minSales(long[] sales) {
         int minMonth = 0; // номер месяца с минимальными продажами среди просмотренных ранее
 
         for (int i = 0; i < sales.length; i++) {
@@ -13,7 +13,7 @@ public class MonthService {
         return minMonth + 1; // месяца нумеруются с 1, а индексы массива с 0, нужно сдвинуть ответ на 1
     }
 
-    public int maxSales(long[] sales) {
+    public long maxSales(long[] sales) {
         int maxMonth = 0;
 
         for (int i = 0; i < sales.length; i++) {
@@ -25,7 +25,7 @@ public class MonthService {
         return maxMonth + 1;
     }
 
-    public int sumSales(long[] sales) {
+    public long sumSales(long[] sales) {
         long sum = 0;
 
         for (int i = 0; i < sales.length; i++) {
@@ -35,12 +35,12 @@ public class MonthService {
         return (int) sum;
     }
 
-    public int avgSales(long[] sales) {
+    public long avgSales(long[] sales) {
 
         return sumSales(sales) / sales.length;
     }
 
-    public int minAvgSales(long[] sales) {
+    public long minAvgSales(long[] sales) {
         long avg = avgSales(sales);
         long minAvgMonth = 0;
         for (int i = 0; i < sales.length; i++) {
@@ -48,10 +48,10 @@ public class MonthService {
                 minAvgMonth++;
             }
         }
-        return (int) minAvgMonth;
+        return minAvgMonth;
     }
 
-    public int maxAvgSales(long[] sales) {
+    public long maxAvgSales(long[] sales) {
         long avg = avgSales(sales);
         long maxAvgMonth = 0;
         for (int i = 0; i < sales.length; i++) {
@@ -59,6 +59,6 @@ public class MonthService {
                 maxAvgMonth++;
             }
         }
-        return (int) maxAvgMonth;
+        return maxAvgMonth;
     }
 }
